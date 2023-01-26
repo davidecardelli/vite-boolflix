@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import { apiUri, getMovies, getTvSeries, apiKey, langIt, } from './assets/data'
 
 export default {
   name: 'Boolflix',
