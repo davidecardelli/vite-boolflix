@@ -42,7 +42,6 @@ export default {
       this.callApi(api.getMovies, 'films')
       this.callApi(api.getTvSeries, 'series')
     },
-    c
   }
 }
 </script>
