@@ -3,10 +3,11 @@ import axios from 'axios';
 import { api } from './assets/data'
 import { store } from './assets/data/store';
 import SearchBar from './components/SearchBar.vue';
+import Card from './components/Card.vue';
 
 export default {
   name: 'Boolflix',
-  components: { SearchBar },
+  components: { SearchBar, Card },
   data() { return { store, searchedTitle: '' } },
   computed: {
     urlConfig() {
@@ -41,7 +42,7 @@ export default {
       this.callApi(api.getMovies, 'films')
       this.callApi(api.getTvSeries, 'series')
     },
-
+    c
   }
 }
 </script>
@@ -50,20 +51,10 @@ export default {
   <search-bar @term-has-change="updateSearchTerm" @submit-form="searchTerm"></search-bar>
 
   <h2>Film</h2>
-  <ul v-for="film in store.films" :key="film.id">
-    <li>{{ film.title }}</li>
-    <li>{{ film.original_title }}</li>
-    <li>{{ film.original_language }}</li>
-    <li>{{ film.vote_average }}</li>
-  </ul>
+  <card v-for="film in store.films" :key="film.id" :item="film"></card>
 
   <h2>Serie</h2>
-  <ul v-for="serie in store.series" :key="serie.id">
-    <li>{{ serie.name }}</li>
-    <li>{{ serie.original_name }}</li>
-    <li>{{ serie.original_language }}</li>
-    <li>{{ serie.vote_average }}</li>
-  </ul>
+  <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
 
 
 
