@@ -1,11 +1,12 @@
 <script>
 import axios from 'axios'; //importo axios
-import { store } from './store/store.js'; //importo lo store perchè dovrò riempirlo in base alle chiamate API
+import { store } from './assets/data/store'; //importo lo store perchè dovrò riempirlo in base alle chiamate API
 import { apiUri, getMovies, getTvSeries, apiKey, langIt, } from './assets/data' //importo per poter poi generare le url per le chiamte API
+import SearchBar from './components/SearchBar.vue';
 
 export default {
   name: 'Boolflix',
-  components: {},
+  components: { SearchBar },
   data() {
     return { store }
   },
@@ -16,8 +17,7 @@ export default {
 </script>
 
 <template>
-
-
+  <search-bar></search-bar>
 </template>
 
 <style lang="scss">
