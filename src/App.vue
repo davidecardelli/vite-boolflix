@@ -8,16 +8,18 @@ export default {
   name: 'Boolflix',
   components: { SearchBar },
   data() {
-    return { store }
+    return { store, searchedTitle: '' }
   },
   methods: {
-
+    updateSearchTerm(searchTerm) {
+      this.searchedTitle = searchTerm;
+    },
   }
 }
 </script>
 
 <template>
-  <search-bar></search-bar>
+  <search-bar @term-has-change="updateSearchTerm"></search-bar>
 </template>
 
 <style lang="scss">

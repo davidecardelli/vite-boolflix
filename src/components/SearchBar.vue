@@ -3,7 +3,8 @@ export default {
     name: 'SearchBar',
     data() {
         return { searchTerm: '' }
-    }
+    },
+    emits: ['term-has-change']
 }
 
 </script>
@@ -11,7 +12,8 @@ export default {
 <template>
 
     <form>
-        <input type="text" v-model.trim="searchTerm">
+        <input type="text" v-model.trim="searchTerm" placeholder="Cerca.."
+            @keyup="$emit('term-has-change', searchTerm)">
         <button>Cerca</button>
     </form>
 
