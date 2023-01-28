@@ -53,5 +53,6 @@ export default {
             <i v-for="i in starFull" :key="i" class="fa-solid fa-star"></i>
             <i v-for="i in starEmpty" :key="i" class="fa-regular fa-star"></i>
         </li>
+        <li>{{ item.overview }}</li>
     </ul>
 </template>
