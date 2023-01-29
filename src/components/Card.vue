@@ -121,6 +121,6 @@ export default {
 
 .fa-star {
     font-size: 1.2em;
-    color: yellow;
+    color: $star;
 }
 </style>
