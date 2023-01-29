@@ -6,7 +6,6 @@ export default {
     },
     emits: ['term-has-change', 'submit-form']
 }
-
 </script>
 
 <template>
@@ -18,3 +17,7 @@ export default {
     </form>
 
 </template>
+
+<style lang="scss" scoped>
+@use'../assets/style/partials/variables' as *;
+</style>

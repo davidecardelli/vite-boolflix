@@ -47,14 +47,22 @@ export default {
 </script>
 
 <template>
+
   <search-bar @term-has-change="updateSearchTerm" @submit-form="searchTerm"></search-bar>
 
+
   <h2>Film</h2>
-  <card v-for="film in store.films" :key="film.id" :item="film"></card>
+  <div class="container d-flex flex-wrap justify-content-center gap-2">
+    <card v-for="film in store.films" :key="film.id" :item="film"></card>
+  </div>
 
   <h2>Serie</h2>
-  <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
-
-
+  <div class="container d-flex flex-wrap justify-content-center gap-2">
+    <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
+  </div>
 
 </template>
+
+<style lang="scss">
+@use'./assets/style/partials/variables.scss' as *;
+</style>
