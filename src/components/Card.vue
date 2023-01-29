@@ -38,23 +38,6 @@ export default {
 
 
 <template>
-    <!-- <ul> -->
-    <!-- <li>
-            <img :src="posterSrc" :alt="item.original_title || item.original_name">
-        </li> -->
-    <!-- <li>{{ item.title || item.name }}</li> -->
-    <!-- <li>{{ item.original_title || item.original_name }}</li> -->
-    <!-- <li>
-            <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
-            <div v-else>{{ item.original_language }}</div>
-        </li> -->
-    <!-- <li>{{ item.vote_average }}</li> -->
-    <!-- <li>
-            <i v-for="i in starFull" :key="i" class="fa-solid fa-star"></i>
-            <i v-for="i in starEmpty" :key="i" class="fa-regular fa-star"></i>
-        </li> -->
-    <!-- <li>{{ item.overview }}</li> -->
-    <!-- </ul> -->
 
     <div class="card-film">
         <img :src="posterSrc" :alt="item.original_title || item.original_name" class="img-fluid">
@@ -107,20 +90,18 @@ export default {
     left: 0;
     right: 0;
 
+    .flag {
+        width: 30px;
+    }
+
+    .fa-star {
+        font-size: 1.2em;
+        color: $star;
+    }
 }
 
 .card-film:hover .card-film-hover {
     background-color: rgba(0, 0, 0, 0.7);
-    /* display: block; */
     visibility: visible;
-}
-
-.flag {
-    width: 30px;
-}
-
-.fa-star {
-    font-size: 1.2em;
-    color: $star;
 }
 </style>
