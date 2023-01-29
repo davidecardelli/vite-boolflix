@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^4.5.9",
     "axios": "^1.2.5",
     "bootstrap": "^5.2.3",
     "sass": "^1.57.1",
