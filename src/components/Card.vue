@@ -37,19 +37,19 @@ export default {
 
 
 <template>
-    <div class="card-film">
+    <div class="card-film mb-4">
         <img :src="posterSrc" :alt="item.original_title || item.original_name">
-        <div class="card-film-hover">
-            <h2 class="text-uppercase">{{ item.title || item.name }}</h2>
-            <h6>{{ item.original_title || item.original_name }}</h6>
-            <div class="d-flex flex-align-center justify-content-center">
+        <div class="card-film-data pt-3">
+            <h2 class="text-uppercase mb-2">{{ item.title || item.name }}</h2>
+            <h6 class="mb-2">{{ item.original_title || item.original_name }}</h6>
+            <div class="d-flex flex-align-center justify-content-center mb-2">
                 <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language" class="flag">
-                <div v-else>{{ item.original_language }}</div>
+                <div v-else class="h6">Original language: {{ item.original_language }}</div>
             </div>
-            <p class="overview px-1">{{ item.overview }}</p>
+            <p class="overview px-1 mb-2">{{ item.overview }}</p>
             <div>
-                <i v-for="i in starFull" :key="i" class="fa-solid fa-star"></i>
-                <i v-for="i in starEmpty" :key="i" class="fa-regular fa-star"></i>
+                <i v-for="i in starFull" :key="i" class="fa-solid fa-star m-0"></i>
+                <i v-for="i in starEmpty" :key="i" class="fa-regular fa-star m-0"></i>
             </div>
         </div>
     </div>
@@ -59,11 +59,7 @@ export default {
 @use'../assets/style/partials/variables' as *;
 
 .card-film {
-
-    width: 245px;
-
     text-align: center;
-
     position: relative;
 
     img {
@@ -72,10 +68,7 @@ export default {
     }
 }
 
-.card-film-hover {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.card-film-data {
     color: white;
     visibility: hidden;
     position: absolute;
@@ -89,7 +82,8 @@ export default {
         font-size: 16px
     }
 
-    h6 {
+    h6,
+    .h6 {
         font-size: 12px
     }
 
@@ -102,13 +96,15 @@ export default {
     }
 
     .fa-star {
-        font-size: 1.2em;
+        font-size: 0.7rem;
         color: $star;
     }
 }
 
-.card-film:hover .card-film-hover {
-    background-color: rgba(0, 0, 0, 0.7);
+.card-film:hover .card-film-data {
+    background-color: rgba(0, 0, 0, 0.8);
     visibility: visible;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
 }
 </style>

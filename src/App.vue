@@ -63,7 +63,7 @@ export default {
     <!--** Inizio Sezione Film **-->
     <section id="films" class="container mt-4">
       <h2 class="text-center mb-3" v-if="store.films.length">Film:</h2>
-      <div class="d-flex flex-wrap justify-content-center gap-3">
+      <div class="row row-cols-5">
         <card v-for="film in store.films" :key="film.id" :item="film"></card>
       </div>
     </section>
@@ -72,7 +72,7 @@ export default {
     <!-- ** Inizio Sezione Serie **-->
     <section id="series" class="container mt-4 mb-4">
       <h2 class="text-center mb-3" v-if="store.series.length">Serie:</h2>
-      <div class="d-flex flex-wrap justify-content-center gap-3">
+      <div class="row row-cols-5">
         <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
       </div>
     </section>
