@@ -39,7 +39,7 @@ export default {
 <template>
     <div class="card-film mb-4">
         <img :src="posterSrc" :alt="item.original_title || item.original_name">
-        <div class="card-film-data pt-3">
+        <div class="card-film-data p-3">
             <h2 class="text-uppercase mb-2">{{ item.title || item.name }}</h2>
             <h6 class="mb-2">{{ item.original_title || item.original_name }}</h6>
             <div class="d-flex flex-align-center justify-content-center mb-2">
