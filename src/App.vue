@@ -3,11 +3,11 @@ import axios from 'axios';
 import { api } from './assets/data'
 import { store } from './assets/data/store';
 import SearchBar from './components/SearchBar.vue';
-import Card from './components/Card.vue';
+import ContainerCard from './components/ContainerCard.vue';
 
 export default {
   name: 'Boolflix',
-  components: { SearchBar, Card },
+  components: { SearchBar, ContainerCard },
   data() { return { store, searchedTitle: '' } },
   computed: {
     urlConfig() {
@@ -59,25 +59,8 @@ export default {
 
   <!-- ! Inizio Main ! -->
   <main>
-
-    <!--** Inizio Sezione Film **-->
-    <section id="films" class="container mt-4">
-      <h2 class="text-center mb-3" v-if="store.films.length">Film:</h2>
-      <div class="row row-cols-5">
-        <card v-for="film in store.films" :key="film.id" :item="film"></card>
-      </div>
-    </section>
-    <!-- ** Fine Sezione Film ** -->
-
-    <!-- ** Inizio Sezione Serie **-->
-    <section id="series" class="container mt-4 mb-4">
-      <h2 class="text-center mb-3" v-if="store.series.length">Serie:</h2>
-      <div class="row row-cols-5">
-        <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
-      </div>
-    </section>
-    <!-- ** Fine Sezione Serie ** -->
-
+    <container-card title="Film:" collection="films"></container-card>
+    <container-card title="Serie:" collection="series"></container-card>
   </main>
   <!-- ! Fine Main !-->
 
