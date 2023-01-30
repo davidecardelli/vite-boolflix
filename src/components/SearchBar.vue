@@ -22,7 +22,7 @@ export default {
 @use'../assets/style/partials/variables' as *;
 
 .input-group {
-    width: 20%;
+    width: 250px;
 }
 
 .btn-danger {

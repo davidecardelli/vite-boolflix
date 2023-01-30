@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             posterBaseUri: 'https://image.tmdb.org/t/p/w342/',
+            placeholder: 'http://www.theprintworks.com/wp-content/themes/psBella/assets/img/film-poster-placeholder.png',
         }
     },
     props: {
@@ -20,7 +21,7 @@ export default {
         },
         posterSrc() {
             const posterSrc = `${this.posterBaseUri}${this.item.poster_path}`
-            console.log(posterSrc)
+            if (!this.item.poster_path) return this.placeholder
             return posterSrc
         },
         starFull() {

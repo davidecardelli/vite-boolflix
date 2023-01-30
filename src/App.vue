@@ -61,18 +61,18 @@ export default {
   <main>
 
     <!--** Inizio Sezione Film **-->
-    <section id="films" class="container">
-      <h2 v-if="store.films.length">Film:</h2>
-      <div class="d-flex flex-wrap gap-3">
+    <section id="films" class="container mt-4">
+      <h2 class="text-center" v-if="store.films.length">Film:</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
         <card v-for="film in store.films" :key="film.id" :item="film"></card>
       </div>
     </section>
     <!-- ** Fine Sezione Film ** -->
 
     <!-- ** Inizio Sezione Serie **-->
-    <section id="series" class="container">
-      <h2 v-if="store.series.length">Serie:</h2>
-      <div class="d-flex flex-wrap gap-3">
+    <section id="series" class="container mt-4 mb-4">
+      <h2 class="text-center" v-if="store.series.length">Serie:</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
         <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
       </div>
     </section>
