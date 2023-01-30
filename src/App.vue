@@ -48,21 +48,61 @@ export default {
 
 <template>
 
-  <search-bar @term-has-change="updateSearchTerm" @submit-form="searchTerm"></search-bar>
+  <!-- ! Inizio Header ! -->
+  <header>
+    <div class="container d-flex justify-content-between align-items-center h-100">
+      <h1 class="text-uppercase m-0 p-0">Boolflix</h1>
+      <search-bar @term-has-change="updateSearchTerm" @submit-form="searchTerm"></search-bar>
+    </div>
+  </header>
+  <!-- ! Fine Header ! -->
 
+  <!-- ! Inizio Main ! -->
+  <main>
 
-  <h2>Film</h2>
-  <div class="container d-flex flex-wrap justify-content-center gap-2">
-    <card v-for="film in store.films" :key="film.id" :item="film"></card>
-  </div>
+    <!--** Inizio Sezione Film **-->
+    <section id="films" class="container">
+      <h2 v-if="store.films.length">Film:</h2>
+      <div class="d-flex flex-wrap gap-3">
+        <card v-for="film in store.films" :key="film.id" :item="film"></card>
+      </div>
+    </section>
+    <!-- ** Fine Sezione Film ** -->
 
-  <h2>Serie</h2>
-  <div class="container d-flex flex-wrap justify-content-center gap-2">
-    <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
-  </div>
+    <!-- ** Inizio Sezione Serie **-->
+    <section id="series" class="container">
+      <h2 v-if="store.series.length">Serie:</h2>
+      <div class="d-flex flex-wrap gap-3">
+        <card v-for="serie in store.series" :key="serie.id" :item="serie"></card>
+      </div>
+    </section>
+    <!-- ** Fine Sezione Serie ** -->
+
+  </main>
+  <!-- ! Fine Main !-->
 
 </template>
 
 <style lang="scss">
-@use'./assets/style/partials/variables.scss' as *;
+@use'./assets/style/partials/variables' as *;
+
+header {
+  height: 60px;
+  background-color: $secondary-color;
+
+  h1 {
+    color: $primary-color;
+    font-family: $primary-font;
+  }
+}
+
+main {
+  background-color: $bg-main;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+
+  h2 {
+    color: white;
+  }
+}
 </style>

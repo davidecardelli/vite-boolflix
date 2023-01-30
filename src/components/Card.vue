@@ -14,12 +14,10 @@ export default {
             const flags = ['it', 'en'];
             return flags.includes(this.item.original_language)
         },
-
         flagSrc() {
             const url = new URL(`../assets/img/${this.item.original_language}.png`, import.meta.url)
             return url.href
         },
-
         posterSrc() {
             const posterSrc = `${this.posterBaseUri}${this.item.poster_path}`
             console.log(posterSrc)
@@ -38,9 +36,8 @@ export default {
 
 
 <template>
-
     <div class="card-film">
-        <img :src="posterSrc" :alt="item.original_title || item.original_name" class="img-fluid">
+        <img :src="posterSrc" :alt="item.original_title || item.original_name">
         <div class="card-film-hover">
             <h2 class="text-uppercase">{{ item.title || item.name }}</h2>
             <h6>{{ item.original_title || item.original_name }}</h6>
@@ -55,27 +52,30 @@ export default {
             </div>
         </div>
     </div>
-
 </template>
 
 <style lang="scss" scoped>
 @use'../assets/style/partials/variables' as *;
 
 .card-film {
-    margin: 5px;
+    // margin: 5px;
     /* padding: 20px 5px 10px; */
     /* flex-direction: column; */
     /* justify-content: space-between; */
     /* background-blend-mode: color; */
-    width: 342px;
-    height: 513px;
-    box-shadow: 10px 10px 10px #111;
+    width: 245px;
+    // box-shadow: 10px 10px 10px #111;
     /* transition: background-color .25s linear; */
     text-align: center;
     /* font-family: 'Roboto', sans-serif */
     /* background-size: cover; */
     /* border: 1px solid red; */
     position: relative;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .card-film-hover {
@@ -89,6 +89,19 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
+    overflow-y: auto;
+
+    h2 {
+        font-size: 16px
+    }
+
+    h6 {
+        font-size: 12px
+    }
+
+    p {
+        font-size: 10px
+    }
 
     .flag {
         width: 30px;

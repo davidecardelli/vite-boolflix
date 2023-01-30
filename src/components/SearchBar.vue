@@ -10,14 +10,22 @@ export default {
 
 <template>
 
-    <form @submit.prevent="$emit('submit-form')">
-        <input type="text" v-model.trim="searchTerm" placeholder="Cerca.."
+    <form class="input-group" @submit.prevent="$emit('submit-form')">
+        <input class="form-control" type="text" v-model.trim="searchTerm" placeholder="Cerca.."
             @keyup="$emit('term-has-change', searchTerm)">
-        <button>Cerca</button>
+        <button class="btn btn-danger">Cerca</button>
     </form>
 
 </template>
 
 <style lang="scss" scoped>
 @use'../assets/style/partials/variables' as *;
+
+.input-group {
+    width: 20%;
+}
+
+.btn-danger {
+    background-color: $primary-color;
+}
 </style>
