@@ -1,0 +1,21 @@
+@use'./partials/variables' as *;
+
+header {
+    height: 60px;
+    background-color: $secondary-color;
+
+    h1 {
+        color: $primary-color;
+        font-family: $primary-font;
+    }
+}
+
+main {
+    background-color: $bg-main;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+
+    h2 {
+        color: white;
+    }
+}
