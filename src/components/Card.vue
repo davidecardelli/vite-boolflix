@@ -58,18 +58,11 @@ export default {
 @use'../assets/style/partials/variables' as *;
 
 .card-film {
-    // margin: 5px;
-    /* padding: 20px 5px 10px; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* background-blend-mode: color; */
+
     width: 245px;
-    // box-shadow: 10px 10px 10px #111;
-    /* transition: background-color .25s linear; */
+
     text-align: center;
-    /* font-family: 'Roboto', sans-serif */
-    /* background-size: cover; */
-    /* border: 1px solid red; */
+
     position: relative;
 
     img {
