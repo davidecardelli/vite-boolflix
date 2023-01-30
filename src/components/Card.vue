@@ -12,7 +12,7 @@ export default {
     },
     computed: {
         hasFlag() {
-            const flags = ['it', 'en', 'es', 'fr', 'pl', 'sv', 'tl', 'hi', 'pt', 'ko', 'nl', 'de', 'ja', 'id', 'ro', 'hu', 'mo', 'ru'];
+            const flags = ['it', 'en', 'es', 'fr', 'pl', 'sv', 'tl', 'hi', 'pt', 'ko', 'nl', 'de', 'ja', 'id', 'ro', 'hu', 'mo', 'ru', 'mk'];
             return flags.includes(this.item.original_language)
         },
         flagSrc() {
